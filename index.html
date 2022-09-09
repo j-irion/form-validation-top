@@ -2,35 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
     <title>Form Validation</title>
   </head>
   <body>
     <h1>Simple Form Validation</h1>
-    <form>
+    <form novalidate>
       <div class="form-element">
         <h2>Email:</h2>
-        <input type="email" />
-        <span>email error</span>
+        <input type="email" id="mail" name="mail" required minlength="8" />
+        <span class="error" id="error-mail">email error</span>
       </div>
       <div class="form-element">
         <h2>Country:</h2>
-        <input type="text" />
-        <span>country error</span>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          required
+          minlength="4"
+          pattern="^[a-zA-Z]+$"
+        />
+        <span class="error" id="error-country">country error</span>
       </div>
       <div class="form-element">
         <h2>Zip Code:</h2>
-        <input type="number" />
-        <span>zip code input</span>
+        <input
+          type="number"
+          id="zip-code"
+          name="zip-code"
+          required
+          min="0"
+          max="99999"
+        />
+        <span class="error" id="error-zip-code">zip code input</span>
       </div>
       <div class="form-element">
         <h2>Password:</h2>
-        <input type="password" />
-        <span>password error</span>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+        />
+        <span class="error" id="error-password">password error</span>
       </div>
       <div class="form-element">
         <h2>Password Confirmation:</h2>
-        <input type="password" />
-        <span>password conf error</span>
+        <input
+          type="password"
+          id="conf-password"
+          name="conf-password"
+          required
+          minlength="8"
+        />
+        <span class="error" id="error-conf-password">password conf error</span>
       </div>
       <button type="submit">Submit</button>
     </form>
