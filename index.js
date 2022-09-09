@@ -40,6 +40,8 @@ form.addEventListener('submit', (event) => {
 });
 
 confPassword.addEventListener('input', () => {
+  password.className = '';
+  confPassword.className = '';
   if (password.value !== confPassword.value) {
     console.log('test');
     showError(confPassword);
@@ -116,6 +118,8 @@ function showConfPasswordError() {
   console.log('conf password error');
   if (password.value !== confPassword.value) {
     confPasswordError.textContent = 'Passwords do not match';
+    password.classList.add('no-match');
+    confPassword.classList.add('no-match');
   } else if (password.validity.valueMissing) {
     confPasswordError.textContent = 'You need to enter a password';
   } else if (password.validity.tooShort) {
